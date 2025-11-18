@@ -4,7 +4,7 @@
     </x-slot:heading>
 
 
-        <h3>{{ $job['title'] }} per year.</h3>
+        <h3> <b>{{ $job['title'] }} </b> per year.</h3>
 
         <p>
             This job pays {{ $job['salary'] }}
