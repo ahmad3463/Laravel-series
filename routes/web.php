@@ -1,7 +1,7 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RecapController;
-use App\Models\job;
+use App\Http\Controllers\UserController;
 
 
 
@@ -12,3 +12,5 @@ Route::get('/', function () {
 Route::get('/about/{name}' , function($name){
     return view('about' , ['name' => $name]);
 });
+
+Route::get('/userName/{name}' , [UserController::class, 'userName']);
