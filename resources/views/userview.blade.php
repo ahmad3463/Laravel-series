@@ -9,7 +9,8 @@
     
     <form action="userform" method="post">
         @csrf
-        <input type="text" name="username" placeholder="please enter your name">
+        <input type="text" name="username" placeholder="please enter your name" value="{{ old('username') }}" 
+        class="{{ $errors->first('username') ? 'input-error' : '' }}">
         <span style="color:red;">@error('username') {{ $message }}@enderror</span>
         <br><br>
         
@@ -25,3 +26,11 @@
         <button type="submit">submit</button>
     </form>
 </div>
+
+
+<style>
+    .input-error{
+        border: 1px solid red;
+        color: red;
+    }
+</style>
