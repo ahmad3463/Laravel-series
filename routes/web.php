@@ -1,21 +1,13 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\FormController;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about/{name}' , function($name){
-    return view('about' , ['name' => $name]);
-});
+Route::view('/contact', 'contact');
 
-Route::get('/userName/{name}' , [UserController::class, 'userName']);
-
-
-Route::view('userview' , 'userview');
-
-Route::post('userform', [FormController::class, 'userform']);
+Route::post('usercontact', [ContactController::class,'contact']);
