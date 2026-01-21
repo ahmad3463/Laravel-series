@@ -20,3 +20,5 @@ Route::get('student',[studentController::class,'getStudent']);
 Route::get('record', [RecordController::class, 'getrecord']);
 Route::post('add-post',[PostController::class, 'post']);
 Route::view('create-post', 'create-post');
+Route::get('post-list', [PostController::class, 'postlist'])->name('postlist');
+Route::get('single-post/{id}', [PostController::class, 'singlepost'])->name('single-post');

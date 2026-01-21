@@ -26,4 +26,15 @@ class PostController extends Controller
         $posts = Post::all();
         return view('post', compact('posts'));
     }
+    
+
+    public function postlist(){
+        $posts = Post::all();
+        return view('post-list', compact('posts'));
+    }
+
+    public function singlepost($id){
+        $post = Post::findOrFail($id);
+        return view('single-post', compact('post'));
+    }
 }
