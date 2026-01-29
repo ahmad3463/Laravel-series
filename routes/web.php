@@ -22,3 +22,8 @@ Route::post('add-post',[PostController::class, 'post']);
 Route::view('create-post', 'create-post');
 Route::get('post-list', [PostController::class, 'postlist'])->name('postlist');
 Route::get('single-post/{id}', [PostController::class, 'singlepost'])->name('single-post');
+// Show edit form
+Route::get('post/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+
+// Update post
+Route::put('post/{post}', [PostController::class, 'update'])->name('posts.update');

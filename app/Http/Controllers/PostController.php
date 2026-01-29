@@ -37,4 +37,24 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         return view('single-post', compact('post'));
     }
+
+
+    public function edit(Post $post)
+{
+    return view('Edit-post', compact('post'));  
+}
+
+public function update(Request $request, Post $post)
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'body'  => 'required|string',
+    ]);
+
+    $post->update($request->only('title','body'));
+
+    return redirect()->route('postlist')->with('success', 'Post updated!');
+
+}
+
 }
